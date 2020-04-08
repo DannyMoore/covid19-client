@@ -69,6 +69,8 @@ export default function Home(props) {
     function renderHistoryGraph(history) {
         //return <p>{JSON.stringify(history)}</p>;
         return (
+            <>
+            <p>{process.env.REACT_APP_STAGE === 'prod' ? "PROD" : "DEV"} </p>
             <LineChart
                 width={500}
                 height={300}
@@ -87,6 +89,7 @@ export default function Home(props) {
                 <Line type="monotone" dataKey="critical" stroke="#82ca9d" />
                 <Line type="monotone" dataKey="deaths" stroke="red" />
             </LineChart>
+            </>
         );
         // return (
         //     <LineChart
